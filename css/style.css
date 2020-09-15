@@ -120,7 +120,8 @@ footer .goal{
     padding:1rem;
     border-radius:6px;
     color:#fff;
-    background: linear-gradient(60deg,#333 , #c0c0c0  )
+    /* background: linear-gradient(60deg,#333 , #c0c0c0  ) */
+    margin-right: 50px;
 }
 footer .goal span{
     color:blue;
