@@ -23,11 +23,16 @@ function eventListeners(){
             html.displayError('All inputs are required ')
           }else{
             
+            // clear previous results
+
+            const prevResults =document.querySelector('.results')
+            if(prevResults !== null){
+                prevResults.remove()
+            }
+
             //   quotation instantiation
             const insurance = new Insurance(make, year, level)
             const price = insurance.calculateQuotation(insurance)
-
-            console.log(price)
             html.showResults(price,insurance)
           }
 
@@ -133,15 +138,39 @@ UITemplate.prototype.showResults =function(price,insurance){
     const results = document.querySelector('.results-container')
     const div = document.createElement('div')
     div.className = 'results'
-    div.innerHTML =`
-        <p class="total">Total: ${price}</p>
-    `;
-    
-// if(results.childNodes == null){
-//     console.log(yes)
-// }else{
 
-    results.appendChild(div)
-// }
+    //assigning readable names to make
+    let make = insurance.make;
+    switch(make){
+        case '1':
+            make = 'American';
+            break;
+        case '2':
+            make = 'Asian';
+            break;
+        case '3':
+            make = 'European';
+            break;
+            // return price
+    } 
+
+    div.innerHTML =`
+    <p class="header">Summary</p>
+        <p >Make: ${make}</p>
+        <p >Year: ${insurance.year}</p>
+        <p >Level: ${insurance.level}</p>
+        <p class="total">Total:$ ${price}</p>
+    `;
+    // spinner elements
+    const spinner =document.querySelector('.spinner')
+    spinner.style.display = 'block'
+
+    setTimeout(()=>{
+        spinner.style.display = 'none'
+
+        results.appendChild(div)
+    },3000)
+
+
 
 }

@@ -13,7 +13,8 @@ body{
     --green:#2ecc71 ;
     --red:#ff0057 ;
     --transparent:rgba(0,0,0,.8) ;
-    --shadow: 0 15px 15px 0 rgba(0,0,0,.5)
+    --shadow: 0 15px 15px 0 rgba(0,0,0,.5);
+    --secondary: #0075FF;
 
 }
 
@@ -37,7 +38,7 @@ body{
 /* error msg */
 .error{
     color: var(--red);
-    background: yellow;
+    background: #c0c0c0;
     text-align: center;
     width: 70%;
     margin-left: auto;
@@ -75,23 +76,40 @@ form .results{
     box-shadow: var(--shadow);
     text-align: center;
     font-weight: 600;
-    padding: .5rem;
+    /* padding: .3rem; */
     width: 60%;
     margin-left: auto;
     margin-right: auto;
     background:#eee;
     color:#333;
     border-radius:6px;
-    border:2px solid var(--green)
+    border:2px solid var(--secondary);
 }
 
 
+.results p.header{
+    background:var(--secondary);
+    color: #fff;
+    text-transform: uppercase;
+    padding: 10px;
+    font-weight: bold;
+    margin: 0;
+    
+
+}
+
+/* loading */
+.spinner{
+    display: none;
+    text-align: center;
+}
+
 form .submit-btn{
     outline: none;
-    border-color:var(--green);
+    border-color:var(--secondary);
     font-size: 1rem;
     border-radius: 6px;
-    background:var(--green);
+    background:var(--secondary);
     color:#fff;
     letter-spacing: 1px;
     opacity: 1;
