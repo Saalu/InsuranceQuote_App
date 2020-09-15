@@ -6,6 +6,7 @@ const html = new UITemplate()
 eventListeners()
 
 function eventListeners(){
+    // onPageLoad
     document.addEventListener('DOMContentLoaded', function(){
         html.displayYears()
     })
